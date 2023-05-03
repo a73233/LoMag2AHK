@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+    <style>
+      .logo.vite:hover {
+        filter: drop-shadow(0 0 2em #747bff);
+      }
+
+      .logo.typescript:hover {
+        filter: drop-shadow(0 0 2em #2d79c7);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div data-tauri-drag-region class="titlebar">
+      <div class="titlebar-button" id="titlebar-save">Save Configuration</div>
+      <!-- <div class="titlebar-button" id="titlebar-maximize">
+        <img
+          src="https://api.iconify.design/mdi:window-maximize.svg"
+          alt="maximize"
+        />
+      </div>
+      <div class="titlebar-button" id="titlebar-close">
+        <img src="https://api.iconify.design/mdi:close.svg" alt="close" />
+      </div> -->
+    </div>
+
+    <div class="container">
+      <h1>LoMag Excel File to AHK script</h1>
+
+      <div class="row">
+        <a href="https://en.wikipedia.org/wiki/Microsoft_Excel" target="_blank">
+          <img src="/src/assets/excel.svg" class="logo vite" alt="Vite logo" />
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Data_conversion" target="_blank">
+          <img
+            src="/src/assets/arrows.svg"
+            class="logo tauri"
+            alt="Tauri logo"
+          />
+        </a>
+        <a href="https://www.autohotkey.com/" target="_blank">
+          <img
+            src="/src/assets/ahk.svg"
+            class="logo typescript"
+            alt="typescript logo"
+          />
+        </a>
+      </div>
+
+      <p>
+        Select the LoMag*.xls first then create the *.ahk script. <br /><br />
+        Modify the x, y, and color values to match the pixel for error detection
+        if needed. <br />
+        Save Configuration to have those values persist.
+      </p>
+
+      <div class="row">
+        <div style="padding-top: 20px">
+          <!-- <input id="greet-input" placeholder="Select File..." /> -->
+          <label for="x-input">x:</label>
+          <input id="x-input" value="174" />
+          <label for="y-input">y:</label>
+          <input id="y-input" value="141" />
+          <label for="color-input">color:</label>
+          <input id="color-input" value="0x255BC7" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div style="padding-top: 20px">
+          <button id="select-button" type="button">Select LoMag File</button>
+          <label style="display: inline-block; width: 12px"></label>
+          <button id="create-button" type="button">Create AHK Script</button>
+        </div>
+      </div>
+
+      <p id="main-msg"></p>
+    </div>
+  </body>
+</html>
